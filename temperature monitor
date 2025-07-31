@@ -1,0 +1,15 @@
+module temp_monitor(
+  input [7:0] temperature,
+  output reg [1:0] status);
+always * (temperature) begin
+if (temperature <= 8'd30)
+ status = 2'b00;
+    else if (temperature <= 8'd60)
+   status = 2'b01;
+ else if (temperature <= 8'd100)
+   status = 2'b10;   
+   else
+     status = 2'b11;
+end
+endmodule
+             
